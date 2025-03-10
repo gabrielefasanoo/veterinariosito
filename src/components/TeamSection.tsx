@@ -19,7 +19,7 @@ const TeamSection = () => {
       email: "a.fumagalli@vetmonza.it"
     },
     {
-      name: "Dr.ssa Alberto Ricci",
+      name: "Dr. Alberto Ricci",
       role: "Specialista in Diagnostica",
       image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80",
       description: "Esperto in diagnostica per immagini e radiologia digitale. Specializzata in oncologia veterinaria.",

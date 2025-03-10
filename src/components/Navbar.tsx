@@ -1,37 +1,57 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import gsap from 'gsap';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    
+    // Animazione iniziale
+    gsap.from("nav", {
+      y: -100,
+      opacity: 0,
+      duration: 1,
+      ease: "power3.out"
+    });
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <nav className="bg-white shadow-lg">
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${
+      isScrolled ? 'bg-white/90 backdrop-blur-md shadow-lg' : 'bg-transparent'
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
+        <div className="flex justify-between h-20">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <img className="h-8 w-auto" src="/logo.png" alt="Logo" />
+            <Link to="/">
+              <img className="h-12 w-auto" src="https://images.unsplash.com/photo-1599443015574-be5fe8a05783?w=200" alt="Logo Veterinario" />
+            </Link>
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Link to="/services" className="text-gray-700 hover:text-gray-900 px-3 py-2">
-              Servizi Veterinari
-            </Link>
-            <Link to="/about" className="text-gray-700 hover:text-gray-900 px-3 py-2">
-              Chi Siamo
-            </Link>
-            <Link to="/contact" className="text-gray-700 hover:text-gray-900 px-3 py-2">
-              Contattaci
-            </Link>
+          <div className="hidden md:flex items-center space-x-8">
+            {['services', 'about', 'contact'].map((item) => (
+              <Link
+                key={item}
+                to={`/${item}`}
+                className={`text-${isScrolled ? 'gray-800' : 'white'} hover:text-blue-500 px-3 py-2 text-sm font-medium transition-colors`}
+              >
+                {item === 'services' ? 'Servizi Veterinari' :
+                 item === 'about' ? 'Chi Siamo' : 'Contattaci'}
+              </Link>
+            ))}
             
-            
-            <button className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">
-              Scopri
-            </button>
-            <button className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600">
-              Prenota
+            <button className="bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+              Prenota Ora
             </button>
           </div>
 
