@@ -26,23 +26,7 @@ const Navbar = () => {
               Contattaci
             </Link>
             
-            {/* Dropdown */}
-            <div className="relative">
-              <button 
-                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                className="text-gray-700 hover:text-gray-900 px-3 py-2"
-              >
-                Altri Servizi
-              </button>
-              {isDropdownOpen && (
-                <div className="absolute right-0 w-48 py-2 mt-2 bg-white rounded-md shadow-xl z-20">
-                  <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Servizio 1</a>
-                  <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Servizio 2</a>
-                  <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Servizio 3</a>
-                </div>
-              )}
-            </div>
-
+            
             <button className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">
               Scopri
             </button>

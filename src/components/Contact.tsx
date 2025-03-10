@@ -19,7 +19,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-gray-500">Telefono</p>
-                  <p className="text-lg font-semibold">+39 123 456 7890</p>
+                  <p className="text-lg font-semibold">+39 039 323 4567</p>
                 </div>
               </div>
 
@@ -30,7 +30,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-gray-500">Email</p>
-                  <p className="text-lg font-semibold">info@clinicaveterinaria.it</p>
+                  <p className="text-lg font-semibold">info@vetmonza.it</p>
                 </div>
               </div>
 
@@ -41,14 +41,14 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-gray-500">Indirizzo</p>
-                  <p className="text-lg font-semibold">Via Roma 123, Milano</p>
+                  <p className="text-lg font-semibold">Via Giuseppe Verdi, 45 - Monza (MB)</p>
                 </div>
               </div>
             </div>
 
             {/* Pulsante indicazioni */}
             <button 
-              onClick={() => window.open('https://maps.google.com?q=Via+Roma+123+Milano')}
+              onClick={() => window.open('https://maps.google.com?q=Via+Giuseppe+Verdi+45+Monza')}
               className="flex items-center space-x-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300"
             >
               <FaDirections className="h-5 w-5" />
@@ -59,7 +59,7 @@ const Contact = () => {
           {/* Mappa */}
           <div className="h-[400px] bg-gray-200 rounded-lg overflow-hidden">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2798.5!2d9.1!3d45.4!4m5!3m4!1s0x0:0x0!8m2!3d45.4!4d9.1"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2790.5!2d9.27!3d45.58!4m5!3m4!1s0x0:0x0!8m2!3d45.58!4d9.27"
               width="100%"
               height="100%"
               style={{ border: 0 }}
