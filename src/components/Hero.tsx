@@ -1,0 +1,53 @@
+import { FaPaw, FaArrowDown } from 'react-icons/fa';
+
+const Hero = () => {
+  return (
+    <div className="relative h-screen">
+      <div 
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: "url('https://images.unsplash.com/photo-1576201836106-db1758fd1c97?q=80')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/40"></div>
+      </div>
+
+      <div className="relative z-10 flex flex-col items-left justify-center h-full text-white px-6 md:px-10 lg:px-10 max-w-7xl mx-auto w-full">
+        <FaPaw className="text-7xl mb-8 text-blue-400 animate-bounce" />
+        
+        <h1 className="text-5xl md:text-7xl font-bold text-left mb-6 tracking-tight max-w-4xl">
+          Il Benessere del Tuo <span className="text-blue-400">Pet</span><br />
+          È La Nostra Priorità
+        </h1>
+        
+        <p className="text-xl md:text-2xl text-left max-w-2xl mb-12 text-gray-200">
+          Servizi veterinari professionali e cure personalizzate per il tuo animale domestico
+        </p>
+        
+        <div className="flex flex-col sm:flex-row gap-6">
+          <button 
+            onClick={() => document.getElementById('prenota')?.scrollIntoView({ behavior: 'smooth' })}
+            className="bg-blue-500 hover:bg-blue-600 text-white px-10 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl group"
+          >
+            Prenota Ora
+            <span className="ml-2 group-hover:translate-x-1 inline-block transition-transform">→</span>
+          </button>
+          <button 
+            onClick={() => document.getElementById('servizi')?.scrollIntoView({ behavior: 'smooth' })}
+            className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-10 py-4 rounded-full text-lg font-semibold transition-all duration-300 border-2 border-white/30"
+          >
+            Scopri i Servizi
+          </button>
+        </div>
+
+        <div className="absolute bottom-10 animate-bounce">
+          <FaArrowDown className="text-2xl text-white/70" />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Hero;
