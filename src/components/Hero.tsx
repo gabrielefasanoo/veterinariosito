@@ -1,6 +1,12 @@
+"use client";
+
 import { FaPaw, FaArrowDown } from 'react-icons/fa';
 
 const Hero = () => {
+  const scrollToSection = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="relative h-screen">
       <div 
@@ -35,14 +41,14 @@ const Hero = () => {
         
         <div className="flex flex-col sm:flex-row gap-6">
           <button 
-            onClick={() => document.getElementById('prenota')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => scrollToSection('prenota')}
             className="bg-blue-500 hover:bg-blue-600 text-white px-10 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl group"
           >
             Prenota Ora
             <span className="ml-2 group-hover:translate-x-1 inline-block transition-transform">→</span>
           </button>
           <button 
-            onClick={() => document.getElementById('servizi')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => scrollToSection('servizi')}
             className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-10 py-4 rounded-full text-lg font-semibold transition-all duration-300 border-2 border-white/30"
           >
             Scopri i Servizi

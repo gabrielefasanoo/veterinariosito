@@ -1,3 +1,5 @@
+"use client";
+
 import { FaStethoscope, FaSyringe, FaHospital, FaArrowRight } from 'react-icons/fa';
 
 const Services = () => {
@@ -63,7 +65,10 @@ const Services = () => {
         </div>
 
         <div className="mt-16 text-center">
-          <button className="bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+          <button 
+            onClick={() => window.location.href = '/prenota'}
+            className="bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
+          >
             Prenota una visita
           </button>
         </div>

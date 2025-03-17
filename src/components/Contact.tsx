@@ -1,6 +1,12 @@
+"use client";
+
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaDirections } from 'react-icons/fa';
 
 const Contact = () => {
+  const openMaps = () => {
+    window.open('https://maps.google.com?q=Via+Giuseppe+Verdi+45+Monza');
+  };
+
   return (
     <section className="py-16 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -48,7 +54,7 @@ const Contact = () => {
 
             {/* Pulsante indicazioni */}
             <button 
-              onClick={() => window.open('https://maps.google.com?q=Via+Giuseppe+Verdi+45+Monza')}
+              onClick={openMaps}
               className="flex items-center space-x-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300"
             >
               <FaDirections className="h-5 w-5" />

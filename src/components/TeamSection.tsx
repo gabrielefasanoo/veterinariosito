@@ -1,3 +1,5 @@
+"use client";
+
 import { FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { useState } from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
